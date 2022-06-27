@@ -345,22 +345,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="遇到的问题及解决方法"><a href="#遇到的问题及解决方法" class="headerlink" title="遇到的问题及解决方法"></a>遇到的问题及解决方法</h2><ol>
-<li>下载并设置博客主题时，如果模板下方没有<em>git clone</em>代码，也可以直接下载该主题的压缩包至文件夹</li>
-<li><strong>执行<em>cmd</em>命令行的位置：</strong>hugo new site xxx(自定义的博客名)中的xxx文件夹</li>
-<li><strong>第一次需要设置Git的<em>user name</em>和<em>email</em>：</strong>在文件夹中鼠标右键，点击Git Bash Here，输入git congif –global user.name “xxx”(自己的用户名)；输入git config –global user.email “xxx”(自己的邮箱)</li>
-<li><strong>问题：</strong>本地测试运行重启后页面空白,提示 : WARN No layout: index.html?<br>确定使用的主题文件在themes文件夹下面</li>
-<li><strong>问题：</strong> <em>TLS certificate verification has been disabled!</em><br>缺少了安全认证，所以解决方法是重启安全认证 git config –global http.sslVerify true</li>
-<li><strong>问题：</strong> <em>SSL certificate problem: unable to get local issuer certificate</em><br>由于当你通过HTTPS访问Git远程仓库的时候，如果服务器上的SSL证书未经过第三方机构认证，git就会报错。原因是因为未知的没有签署过的证书意味着可能存在很大的风险。解决办法就是通过下面的命令将git中的sslverify关掉：<br>git config –system http.sslverify false</li>
-<li><strong>配置SSH keys的方法：</strong>输入cd~&#x2F;.ssh,检查是否有.ssh的文件<br>输入ssh-keygen -t rsa -C “xxx”(自己的邮箱)，连续回车生成密钥，最后得到了两个文件：id_rsa和id_rsa.pub(默认存储路径是：C:\Users\Administrator.ssh)<br>输入eval “$(ssh-agent -s)”，添加密钥到ssh-agent;再输入ssh-add ~&#x2F;.ssh&#x2F;id_rsa，添加生成的SSH key到ssh-agent</li>
-<li><strong>问题：</strong> <em>Repository not found，fatal: repository <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a>    xxx&#x2F;xxxx&#x2F; not found</em><br>原因是没有把秘钥添加到ssh-agent高速缓存中<br>解决办法如下：<br>1 查看ssh-agent中的密钥命令: ssh-add -l<br>2 输入命令:ssh-agent bash<br>3 再次查看ssh-agent中的密钥：ssh-add -l<br>4 把专用密钥添加到 ssh-agent 的高速缓存中，若是没有改秘钥的名字则默认是这个：ssh-add ~&#x2F;.ssh&#x2F;id_rsa<br>5 输入命令:git clone <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:xxx&#x2F;xxxx.git（主要这里的XX代表您要从这里克隆的地方，请根据实际修改）</li>
-<li>**添加ssh:**登录Github，点击头像下的settings<br>   输入ssh -T <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>，测试添加ssh是否成功。如果看到Hi后面是你的用户名，就说明成功了<br>   假如ssh-key配置失败，那么只要以下步骤就能完全解决</li>
-</ol>
-<p>   首先，清除所有的key-pair<br>   ssh-add -D<br>   rm -r ~&#x2F;.ssh<br>   删除你在github中的public-key</p>
-<p>   重新生成ssh密钥对<br>   ssh-keygen -t rsa -C “<a href="mailto:&#x78;&#120;&#120;&#x40;&#x78;&#120;&#x78;&#x2e;&#x63;&#111;&#x6d;">&#x78;&#120;&#120;&#x40;&#x78;&#120;&#x78;&#x2e;&#x63;&#111;&#x6d;</a>“</p>
-<p>   接下来正常操作<br>   在github上添加公钥public-key:<br>   首先在你的终端运行 xclip -sel c ~&#x2F;.ssh&#x2F;id_rsa.pub将公钥内容复制到剪切板<br>   在github上添加公钥时，直接复制即可<br>   保存</p>
-<p>   配置Deployment，在其文件夹中，找到_config.yml文件，修改repo值（在末尾），repo值是你在github项目里的ssh<br>10. 想要将下载的主题修改为自己的信息，文件夹为hugo new site xxx时的xxx文件夹,里面的_config.yml文件</p>
-
+              <h2 id="遇到的问题及解决方法"><a href="#遇到的问题及解决方法" class="headerlink" title="遇到的问题及解决方法"></a>遇到的问题及解决方法</h2>
+          
       
       
     </div>
@@ -370,6 +356,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a  href="/2022/06/27/%E5%85%B3%E4%BA%8E%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
